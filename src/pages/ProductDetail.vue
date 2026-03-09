@@ -58,7 +58,7 @@
             <img
               :src="
                 product.image
-                  ? `http://localhost:3000${product.image}`
+                  ? `https://test-shop-esvance.onrender.com${product.image}`
                   : 'https://via.placeholder.com/800x800?text=No+Image'
               "
               :alt="product.name"
@@ -303,7 +303,9 @@ const fetchProductDetail = async () => {
   try {
     loading.value = true
     error.value = null
-    const response = await axios.get(`http://localhost:3000/api/products/${productId}`)
+    const response = await axios.get(
+      `https://test-shop-esvance.onrender.com/api/products/${productId}`,
+    )
     product.value = response.data
   } catch (err) {
     console.error(err)
