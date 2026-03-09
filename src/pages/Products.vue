@@ -205,7 +205,7 @@
             <img
               :src="
                 product.image
-                  ? `http://localhost:3000${product.image}`
+                  ? `https://test-shop-esvance.onrender.com${product.image}`
                   : 'https://via.placeholder.com/400?text=No+Image'
               "
               :alt="product.name"
@@ -299,7 +299,7 @@ const sortOption = ref('newest')
 const fetchProducts = async () => {
   try {
     loading.value = true
-    const response = await axios.get('http://localhost:3000/api/products')
+    const response = await axios.get('https://test-shop-esvance.onrender.com/api/products')
     products.value = response.data
   } catch (err) {
     error.value = 'ไม่สามารถดึงข้อมูลสินค้าได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง'
@@ -335,7 +335,7 @@ const filteredAndSortedProducts = computed(() => {
 // บันทึกสถิติเมื่อเข้าหน้าเว็บ (เพื่อให้หลังบ้านรู้ว่ามีคนเข้าหน้านี้)
 const recordVisit = async () => {
   try {
-    await axios.post('http://localhost:3000/api/visits/record')
+    await axios.post('https://test-shop-esvance.onrender.com/api/visits/record')
   } catch (error) {}
 }
 

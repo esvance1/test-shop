@@ -14,7 +14,7 @@
           class="w-full flex-shrink-0 h-full relative group"
         >
           <img
-            :src="`http://localhost:3000${banner.image}`"
+            :src="`https://test-shop-esvance.onrender.com${banner.image}`"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
           />
           <div
@@ -116,7 +116,7 @@
             <img
               :src="
                 product.image
-                  ? `http://localhost:3000${product.image}`
+                  ? `https://test-shop-esvance.onrender.com${product.image}`
                   : 'https://via.placeholder.com/400?text=No+Image'
               "
               :alt="product.name"
@@ -404,7 +404,7 @@ let slideInterval = null
 
 const fetchBanners = async () => {
   try {
-    const res = await axios.get('http://localhost:3000/api/banners')
+    const res = await axios.get('https://test-shop-esvance.onrender.com/api/banners')
     banners.value = res.data
   } catch (err) {
     console.error(err)
@@ -423,7 +423,7 @@ const goToSlide = (index) => {
 
 const fetchFeaturedProducts = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/products')
+    const response = await axios.get('https://test-shop-esvance.onrender.com/api/products')
     featuredProducts.value = response.data.slice(0, 4)
   } catch (error) {
     console.error(error)
@@ -434,7 +434,7 @@ const fetchFeaturedProducts = async () => {
 
 const recordVisit = async () => {
   try {
-    await axios.post('http://localhost:3000/api/visits/record')
+    await axios.post('https://test-shop-esvance.onrender.com/api/visits/record')
   } catch (error) {
     console.log('บันทึกสถิติไม่สำเร็จ')
   }
