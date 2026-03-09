@@ -24,7 +24,9 @@ app.use('/api/banners', require('./routes/banners'))
 app.use('/api/logs', require('./routes/logs'))
 app.use('/api/visits', require('./routes/visits'))
 
-const PORT = 3000
+// ให้มันเช็คว่าถ้า Render ส่ง PORT มาให้ก็ใช้ของ Render แต่ถ้าไม่มี (รันในคอม) ให้ใช้ 3000
+const PORT = process.env.PORT || 3000
+
 app.listen(PORT, () => {
-  console.log(`🚀 Backend Server running on http://localhost:${PORT}`)
+  console.log(`🚀 Backend Server running on port ${PORT}`)
 })
